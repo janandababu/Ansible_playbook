@@ -1,0 +1,32 @@
+---
+- name: Configuring Tomcat8
+  hosts: all
+  tasks:
+   - name: Install Tomcat8
+     apt:
+      name: tomcat8
+      state: present
+   - name: copy tomcat-users.xmlfile
+     copy:  
+      src: /home/ubuntu/tomcat-users.xml
+      dest: /etc/tomcat8
+   - name: change port of tomcat
+     replace:
+      regexp: 8080
+      replace: 9090
+      path: /etc/tomcat8/server.xml
+   - name: restart tomcat8
+     service:
+      name: tomcat8
+      state: restarted
+   - name: check url  resonse of server1
+     uri:
+      url: http://172.31.93.137:9090
+      status_code: 200
+   - name: check url response of server2
+     uri:
+      url: http://172.31.95.222:9090
+      status_code: 200     
+
+
+...

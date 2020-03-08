@@ -1,0 +1,12 @@
+---
+- name: create files
+  hosts: 172.31.93.137
+  tasks: 
+   - name: create file
+     file:
+      name: "{{a}}"
+      state: "{{b}}"
+      owner: "{{c}}"
+      group: "{{d}}"
+
+...

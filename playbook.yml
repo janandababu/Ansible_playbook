@@ -1,0 +1,16 @@
+---
+- name: Creating Users on Managed Nodes
+  hosts: all
+  tasks:
+   - name: User Creation
+     user:
+      name: Ramesh
+      password: intelliq
+      home: /home/Ramesh
+      uid: 1580
+      shell: /bin/bash
+      comment: "A normal user"
+
+...
+
+                
