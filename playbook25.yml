@@ -1,0 +1,7 @@
+---
+- name: Calling child playbook
+  hosts: all
+  tasks: 
+   - name: call child playbook for file creation
+     include: playbook24.yml
+...

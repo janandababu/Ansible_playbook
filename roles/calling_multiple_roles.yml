@@ -1,0 +1,7 @@
+---
+- name: call multiple roles
+  hosts: all
+  roles:
+   - tomcat
+   - apache      
+...

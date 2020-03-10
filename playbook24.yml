@@ -1,0 +1,7 @@
+---
+- name: File creation
+  file:
+   name: file34       
+   state: touch
+...
+
